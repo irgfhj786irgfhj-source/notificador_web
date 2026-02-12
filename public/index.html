@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Notificador Web + Socket.IO</title>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <h1>Notificador Web (Push + Socket.IO)</h1>
+  <button id="btn-permiso">1) Activar notificaciones</button>
+  <button id="btn-suscribir">2) Suscribirme a push</button>
+  <button id="btn-enviar-push">Enviar PUSH de prueba</button>
+  <button id="btn-modal">Modal LOCAL</button>
+  <button id="btn-modal-broadcast">Modal a TODOS</button>
+
+  <div id="modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,.4); align-items:center; justify-content:center;">
+    <div style="background:white; padding:20px; border-radius:10px; max-width:90%;">
+      <h2 id="modal-title">Aviso</h2>
+      <p id="modal-text"></p>
+      <button onclick="document.getElementById('modal').style.display='none'">Cerrar</button>
+    </div>
+  </div>
+
+  <audio id="ding" preload="auto" src="/ding.wav"></audio>
+</body>
+</html>
